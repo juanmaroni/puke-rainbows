@@ -6,7 +6,7 @@ pub fn print_colored(text: String) {
         .enumerate()
         .for_each(|(i, c)| {
             let (r, g, b) = get_rgb_color(i);
-            print!("\x1b[38;2;{};{};{}m{}\x1b[0m", r, g, b, c); // ANSI
+            print!("\x1b[38;2;{r};{g};{b}m{c}\x1b[0m"); // ANSI
         });
     print!("\n");
 }
