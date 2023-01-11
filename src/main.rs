@@ -17,8 +17,10 @@ Options:
 
 Examples:
 \tpuke-rainbows -h
+\tpuke-rainbows -t Example
 \tpuke-rainbows -t \"Hello there, this is an example text\"
-\tpuke-rainbows -f lorem-ipsum";
+\tpuke-rainbows -f lorem-ipsum
+\tpuke-rainbows -f /path/to/myfile";
 
 fn main() -> Result<()> {
     let args: Vec<String> = env::args().skip(1).collect();
