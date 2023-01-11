@@ -3,7 +3,22 @@ use anyhow::{Context, Result, bail};
 use puke_rainbows::print_colored;
 
 const DEFAULT_FILE: &str = "lorem-ipsum";
-const HELP_TEXT: &str = "Usage: puke-rainbows {{-h | -t <text> | -f <file>}}";
+const HELP_TEXT: &str = 
+"Puke Rainbows (puke-rainbows)\n
+Usage:
+\tpuke-rainbows -h
+\tpuke-rainbows -t <text>
+\tpuke-rainbows -f <file>
+    
+Options:
+\t-h \tShow this screen.
+\t-t \tPrint a given text.
+\t-f \tPrint a given file.
+
+Examples:
+\tpuke-rainbows -h
+\tpuke-rainbows -t \"Hello there, this is an example text\"
+\tpuke-rainbows -f lorem-ipsum";
 
 fn main() -> Result<()> {
     let args: Vec<String> = env::args().skip(1).collect();
