@@ -1,5 +1,5 @@
 use std::{env, fs};
-use anyhow::{Context, Result, anyhow};
+use anyhow::{Context, Result, bail};
 use puke_rainbows::print_colored;
 
 const DEFAULT_FILE: &str = "lorem-ipsum";
@@ -18,7 +18,7 @@ fn main() -> Result<()> {
             print_colored(String::from(HELP_TEXT));
         } else {
             // Error
-            return Err(anyhow!("Wrong argument!"));
+            bail!("Wrong argument!\n\n{}\n", HELP_TEXT);
         }
     } else if num_args == 2 {
         if args[0] == "-f" {
@@ -29,11 +29,11 @@ fn main() -> Result<()> {
             print_colored(args[1].to_owned());
         } else {
             // Error
-            return Err(anyhow!("Wrong argument!"));
+            bail!("Wrong argument!\n\n{}\n", HELP_TEXT);
         }
     } else {
         // Error
-        return Err(anyhow!("Wrong number of arguments!"));
+        bail!("Wrong number of arguments!\n\n{}\n", HELP_TEXT);
     }
 
     Ok(())
