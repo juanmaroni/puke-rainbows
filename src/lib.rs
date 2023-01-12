@@ -2,13 +2,14 @@ use std::f64::consts::PI;
 
 // Print text with RGB colors
 pub fn print_colored(text: String) {
-    text.chars()
+    println!("{}", text.chars()
         .enumerate()
-        .for_each(|(i, c)| {
+        .map(|(i, c)| {
             let (r, g, b) = get_rgb_color(i);
-            print!("\x1b[38;2;{r};{g};{b}m{c}\x1b[0m"); // ANSI
-        });
-    print!("\n");
+            format!("\x1b[38;2;{r};{g};{b}m{c}\x1b[0m") // ANSI
+        })
+        .collect::<String>()
+    )
 }
 
 // Get a color using trigonometry
