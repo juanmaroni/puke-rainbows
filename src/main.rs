@@ -4,12 +4,13 @@ use puke_rainbows::print_colored;
 
 const DEFAULT_FILE: &str = "lorem-ipsum";
 const HELP_TEXT: &str = 
-"Puke Rainbows (puke-rainbows)\n
+"Puke Rainbows (puke-rainbows)
+
 Usage:
 \tpuke-rainbows -h
 \tpuke-rainbows -t <text>
 \tpuke-rainbows -f <file>
-    
+
 Options:
 \t-h \tShow this screen.
 \t-t \tPrint a given text.
