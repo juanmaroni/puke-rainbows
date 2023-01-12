@@ -8,3 +8,6 @@ RGB range is 1-255. Idea: use modulo operation (and add other math changes) to c
 I don't think that it matters very much.
 
 Playing around with Anyhow.
+
+## Resources
+https://rust-cli.github.io/book/index.html
