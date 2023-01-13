@@ -29,3 +29,18 @@ fn calc_color_channel(i: f64, angle: f64) -> f64 {
 
     (factor * i + angle * PI / 3.0).sin() * 127.0 + 128.0
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn calc_color_channel_test() {
+        assert_eq!(calc_color_channel(0.0, 0.0), 128.0);
+    }
+
+    #[test]
+    fn get_rgb_color_test() {
+        assert_eq!(get_rgb_color(0), (128, 237, 18));
+    }
+}
