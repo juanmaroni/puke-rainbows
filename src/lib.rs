@@ -1,12 +1,22 @@
+use std::fs::File;
+use std::io::prelude::*;
 use std::f64::consts::PI;
 
 // Print text with RGB colors
-pub fn print_colored(text: String) {
+pub fn print_colored(text: &str) {
     println!("{}", convert_to_colored(text));
 }
 
+// Generate a file with the converted text
+pub fn generate_ansi_file(text: &str) -> std::io::Result<()> {
+    let mut file = File::create("puke.txt")?;
+    file.write_all(text.as_bytes())?;
+
+    Ok(())
+}
+
 // Iterate chars from a String and add color
-fn convert_to_colored(text: String) -> String {
+pub fn convert_to_colored(text: &str) -> String {
     text.chars()
         .enumerate()
         .map(|(i, c)| {
@@ -50,6 +60,6 @@ mod tests {
 
     #[test]
     fn convert_to_colored_test() {
-        assert_eq!(convert_to_colored(String::from("a")), format!("\x1b[38;2;128;237;18ma\x1b[0m"));
+        assert_eq!(convert_to_colored("a"), format!("\x1b[38;2;128;237;18ma\x1b[0m"));
     }
 }
