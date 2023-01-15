@@ -15,7 +15,7 @@ Options:
 \t-h \tShow this screen.
 \t-t \tPrint a given text.
 \t-f \tPrint a given file.
-\t-save Save output as a file named \"puke.txt\".
+\t-save \tSave output as a file named \"puke.txt\".
 
 Examples:
 \tpuke-rainbows -h

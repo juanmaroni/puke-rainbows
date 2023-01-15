@@ -9,20 +9,21 @@ Puke Rainbows (puke-rainbows)
 
 Usage:
     puke-rainbows -h
-    puke-rainbows -t <text>
-    puke-rainbows -f <file>
+    puke-rainbows -t <text> [-save]
+    puke-rainbows -f <file> [-save]
 
 Options:
     -h      Show this screen.
     -t      Print a given text.
     -f      Print a given file.
+    -save Save output as a file named "puke.txt".
 
 Examples:
     puke-rainbows -h
     puke-rainbows -t Example
-    puke-rainbows -t "Hello there, this is an example text"
+    puke-rainbows -t "Hello there, this is an example text" -save
     puke-rainbows -f lorem-ipsum
-    puke-rainbows -f /path/to/myfile
+    puke-rainbows -f /path/to/myfile -save
 ```
 
 ## Notes
