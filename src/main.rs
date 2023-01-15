@@ -1,6 +1,6 @@
-use std::{env, fs};
-use anyhow::{Context, Result, bail};
-use puke_rainbows::{print_colored, convert_to_colored, generate_ansi_file};
+use std::env;
+use anyhow::{Result, bail};
+use puke_rainbows::{print_colored, get_file_content, convert_to_colored, generate_ansi_file};
 
 const DEFAULT_FILE: &str = "lorem-ipsum";
 const HELP_TEXT: &str = 
@@ -75,11 +75,4 @@ fn main() -> Result<()> {
     }
 
     Ok(())
-}
-
-fn get_file_content(filepath: &str) -> Result<String> {
-    let file_content = fs::read_to_string(filepath)
-        .with_context(|| format!("could not read file `{}`", filepath))?;
-
-    Ok(file_content)
 }

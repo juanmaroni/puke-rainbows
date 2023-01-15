@@ -1,10 +1,19 @@
-use std::fs::File;
-use std::io::prelude::*;
+use std::fs::{read_to_string, File};
+use std::io::Write;
 use std::f64::consts::PI;
+use anyhow::{Context, Result};
 
 // Print text with RGB colors
 pub fn print_colored(text: &str) {
     println!("{}", convert_to_colored(text));
+}
+
+// Get file content as String
+pub fn get_file_content(filepath: &str) -> Result<String> {
+    let file_content = read_to_string(filepath)
+        .with_context(|| format!("could not read file `{}`", filepath))?;
+
+    Ok(file_content)
 }
 
 // Generate a file with the converted text
