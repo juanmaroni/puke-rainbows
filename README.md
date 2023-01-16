@@ -16,7 +16,7 @@ Options:
     -help   Show this screen.
     -text   Print a given text.
     -file   Print a given file.
-    -save   Save output as a file named "puke.txt".
+    -save   Save ANSI output as a file named "puke.txt".
 
 Examples:
     puke-rainbows -help

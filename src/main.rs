@@ -15,7 +15,7 @@ Options:
 \t-help \tShow this screen.
 \t-text \tPrint a given text.
 \t-file \tPrint a given file.
-\t-save \tSave output as a file named \"puke.txt\".
+\t-save \tSave ANSI output as a file named \"puke.txt\".
 
 Examples:
 \tpuke-rainbows -help
