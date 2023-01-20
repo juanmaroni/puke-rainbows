@@ -1,4 +1,4 @@
-# Build windows, linux and mac with native zip types
+# Build Windows, Linux and macOS with native zip types
 # https://github.com/marketplace/actions/rust-release-binary
 
 on:
