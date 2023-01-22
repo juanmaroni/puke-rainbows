@@ -30,6 +30,8 @@ Examples:
 RGB range is 1-255. Idea: use modulo operation (and add other math changes) to clamp between 0 and 255 (% 256), inclusive.
 I don't think that it matters very much.
 
+I am using this project to try GitHub Actions.
+
 ## Resources
 https://flaviocopes.com/go-tutorial-lolcat/
 
