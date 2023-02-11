@@ -16,7 +16,7 @@ Options:
     -help   Show this screen.
     -text   Print a given text.
     -file   Print a given file.
-    -save   Save ANSI output as a file named "puke.txt".
+    -save   Save ANSI output as a file named "puke.txt" in the current directory.
 
 Examples:
     puke-rainbows -help
@@ -26,11 +26,26 @@ Examples:
     puke-rainbows -file /path/to/myfile -save
 ```
 
+## Actions
+Testing done on a clone.
+
+### build
+Runs when there is a push to the main branch or manually in the GitHub UI.
+
+Checks that code compiles, passes tests and builds binaries.
+
+### create-release
+Runs manually in the GitHub UI.
+
+Checks if there is a tag with the current app version (from "Cargo.toml" file). If there isn't, continues.
+
+Builds binaries and uploads them as artifacts.
+
+Creates a tag and a release, and attaches the previously generated artifacts to the release.
+
 ## Notes
 RGB range is 1-255. Idea: use modulo operation (and add other math changes) to clamp between 0 and 255 (% 256), inclusive.
 I don't think that it matters very much.
-
-I am using this project to try GitHub Actions.
 
 ## Resources
 https://flaviocopes.com/go-tutorial-lolcat/
