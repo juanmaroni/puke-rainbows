@@ -2,7 +2,7 @@ use std::env;
 use anyhow::{Result, bail};
 use puke_rainbows::{print_colored, get_file_content, convert_to_colored, generate_ansi_file};
 
-const DEFAULT_FILE: &str = "lorem-ipsum";
+const DEFAULT_TEXT: &'static str = include_str!("../lorem-ipsum");
 const HELP_TEXT: &str = 
 "Puke Rainbows (puke-rainbows)
 
@@ -30,7 +30,7 @@ fn main() -> Result<()> {
     
     if num_args == 0 {
         // Default
-        print_colored(&get_file_content(DEFAULT_FILE)?);
+        print_colored(DEFAULT_TEXT);
     } else if num_args == 1 {
         if args[0] == "-help" {
             // Print help message
